@@ -38,7 +38,14 @@ automationmgr@master1:~/workbench/kubenetesbench/kubernetes-k8s-lab15$
 
 Wait for it to be deployed by checking the status of the pods using 
 
-kubectl get pods -n weave
+$ kubectl get pods -n weave -o wide
+NAME                                         READY   STATUS              RESTARTS   AGE     IP             NODE      NOMINATED NODE   READINESS GATES
+weave-scope-agent-dqh9j                      1/1     Running             0          2m35s   192.168.1.86   node1     <none>           <none>
+weave-scope-agent-v459j                      1/1     Running             0          2m35s   192.168.1.82   node2     <none>           <none>
+weave-scope-agent-v7fmk                      1/1     Running             0          2m35s   192.168.1.85   master1   <none>           <none>
+weave-scope-app-545ddf96b4-lnfmv             0/1     ContainerCreating   0          2m34s   <none>         node1     <none>           <none>
+weave-scope-cluster-agent-74c596c6b7-q7jbb   0/1     ContainerCreating   0          2m35s   <none>         node1     <none>           <none>
+
 
 By default, once deployed it will only be accessible from inside the cluster. You need to create a Service which exposes the port. In the command below we also expose the Service to the outside world via the external-ip parameter. Exposing the service to on a public IP is not recommended. Instead, it should require a VPN connection to access.
 
