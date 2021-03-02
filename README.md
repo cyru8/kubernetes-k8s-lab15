@@ -53,3 +53,15 @@ pod=$(kubectl get pod -n weave --selector=name=weave-scope-app -o jsonpath={.ite
 kubectl expose pod $pod -n weave --external-ip="172.17.0.42" --port=4040 --target-port=4040
 
 ######
+
+Step 3 - Visualise Cluster
+
+With Scope and our sample application deployed we can visualise our cluster.
+View Scope
+
+Use the link below to visualise Weave Scope.
+
+https://2886795306-4040-cykoria03.environments.katacoda.com
+
+The dashboard will highlight containers running, allow you to inspect their usage and visualise the connections between containers.
+######
