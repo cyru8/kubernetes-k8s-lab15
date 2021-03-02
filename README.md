@@ -65,3 +65,6 @@ https://2886795306-4040-cykoria03.environments.katacoda.com
 
 The dashboard will highlight containers running, allow you to inspect their usage and visualise the connections between containers.
 ######
+
+
+kubectl get pods -n weave
